@@ -1,0 +1,73 @@
+#
+###################################
+# Site wide configuration
+####################################
+#
+title:       "Blog BLog"
+description: "Web Application Security enthusiast, breaking things for fun"
+url:         # the base hostname & protocol for your site
+blog_uri: http://maradrianbelen.com
+
+
+#
+###################################
+# Jekyll configuration
+####################################
+#
+timezone:          Europe/Paris
+markdown:          kramdown
+#highlighter:       pygments
+excerpt_separator: <!--more-->
+permalink:         /articles/:year-:month/:title
+
+kramdown:
+  auto_ids:       true
+  footnote_nr:    1
+  entity_output:  as_char
+  toc_levels:     1..6
+  enable_coderay: false
+pages_list:       
+  about me : '/about me '
+  archive: '/archive'
+  categories: '/categories'
+  
+
+#
+###################################
+# Site Owner configuration
+####################################
+#
+owner:
+  name: Adrian Belen
+  avatar: profile.jpg
+  job: "WEB APPLICATION SECURITY ENTHUSIAST, BREAKING THINGS FOR FUN & profit :D"
+  bio: ":D"
+  email:
+  disqus-shortname: adrianswebsecurityblog
+  twitter: nukesec
+  facebook:
+  google:
+    plus:
+    analytics: UA-75403295-1
+    verify:
+    ad-client:
+    ad-slot:
+  bing-verify:
+  github: deadstar1
+  stackoverflow: #123456/username   from a "http://stackoverflow.com/users/123456/username" link
+  linkedin: #username
+  xing: #username
+  instagram: #username
+  lastfm: #username
+  tumblr: #username
+  pinterest: #username
+  foursquare: #username
+  steam: #username
+  dribbble: #username
+  youtube: #username
+  soundcloud: #username
+  weibo: #username
+  flickr: #username
+  codepen: #username
+  hackerone: adrianbelen
+  bugcrowd: adrianbelen

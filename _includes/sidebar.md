@@ -1,0 +1,21 @@
+{% if page.author %} {% assign author = site.data.authors[page.author] %}{% else %}{% assign author = site.owner %} {% endif %}
+
+<div class="cover-card table-cell table-middle">
+  {% if author.avatar %}
+  <img src="{{ site.url }}/img/{{ author.avatar }}" alt="this is me!" class="avatar">
+  {% endif %}
+  <a href="{{ site.url }}/" class="author_name">{{ author.name }}</a>
+  <span class="author_job">{{ author.job }}</span>
+  <span class="author_bio mbm"></span>
+  <nav class="nav">
+    <ul class="nav-list">
+      {% for page in site.pages_list %} 
+      <li class="nav-item">
+        <a href="{{ site.url }}{{ page[1]  }}">{{ page[0] }}</a>{% unless forloop.last %}
+        <span>/</span>{% endunless %}
+      </li>
+     {% endfor %}
+    </ul>
+  </nav>
+  {% include social-links.html %}
+</div>

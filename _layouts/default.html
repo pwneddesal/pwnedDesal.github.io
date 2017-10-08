@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include head.html %}
+
+<body>
+  <div class="row">
+    <div class="col s12 m3">
+      <div class="table cover">
+        {% include sidebar.md %}
+      </div>
+    </div>
+    <div class="col s12 m9">
+      <div class="post-listing">
+        {{ content }}
+        {% include footer.html %}
+      </div>
+    </div>
+  </div>
+  {% include js.html %}
+</body>
+
+<!-- some random motos here-->
+  <script type="text/javascript">
+    //list of motos
+    var motos = [
+    //"In the end, people will judege you anyway, so don't live your life impressing others - live your life impressing yourself",
+    //"Live life to express, not to impress",
+    "<b>Success</b> is the ability to go from one failure to another with no loss of enthusiasm."
+    //"<b>IF</b> no mistake have you made, yet losing you are... a different game you should play </br> - Master Yoda"
+    //"<b>No free quote for the day!</b>",
+    //"Your dream doesn't have an expiration date. Take a deep breath, and try again.",
+    //"There is nothing wrong with being mediocre, there is something wrong with not wanting to improve past mediocrity."
+    ];
+    var len =motos.length
+    var x = Math.floor((Math.random() * len ) + 1);
+    document.getElementsByClassName('author_bio')[0].innerHTML='"'+motos[x-1] + '" </br> -Sir Winston Churchill';
+    console.log('selected moto:' + motos[x-1]);
+    console.log('moto count: ' + motos.length );
+    console.log('random ' + x-1)
+  </script>
+</html>
