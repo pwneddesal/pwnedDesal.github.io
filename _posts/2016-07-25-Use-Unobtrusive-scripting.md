@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Scriptless attack–Use Unobtrusive scripting in malicious way(Bypassing XSS Mitigations Via Script Gadgets)
+title: Scriptless attack—Use Unobtrusive scripting in malicious way(Bypassing XSS Mitigations Via Script Gadgets)
 excerpt: 'Stored on-site request forgery'
 categories: [XSS,CSRF,Jquery]
 comments: false
