@@ -18,7 +18,7 @@ What is [Bug Bounty](https://www.linkedin.com/pulse/you-really-ready-bug-bounty-
 ### Contact
 
 
-**mailbox.adrianbelen [at] gmail.com | 51DD 41AA 9199 CA85**
+<b> mailbox.adrianbelen [at] gmail.com | 51DD 41AA 9199 CA85</b>
 
 
 
