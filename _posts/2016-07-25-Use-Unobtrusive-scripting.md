@@ -1,10 +1,16 @@
 ---
+title: Scriptless attack—Use Unobtrusive scripting in malicious way(Bypassing XSS
+  Mitigations Via Script Gadgets)
+date: 2016-07-25 00:00:00 +02:00
+categories:
+- XSS
+- CSRF
+- Jquery
 layout: post
-title: Scriptless attack—Use Unobtrusive scripting in malicious way(Bypassing XSS Mitigations Via Script Gadgets)
-excerpt: 'Stored on-site request forgery'
-categories: [XSS,CSRF,Jquery]
+excerpt: Stored on-site request forgery
 comments: false
 ---
+
 > 13/06/2017: This attack was coined as [Bypassing XSS Mitigations Via Script Gadgets](https://www.youtube.com/watch?v=p07acPBi-qw)
 
 Probably You have experienced a situation which your context based XSS payload,composed of javascript command; event handlers and HTML tags,  is removed by XSS filters but not the data-* attributes. The XSS filter only returns some HTML tag (`<b>`, `<a>` or `<i>` ) and tag's data-* attributes. 

@@ -1,6 +1,6 @@
 ---
-layout: page
 title: About me
+layout: page
 ---
 
 Since early 2014, I have participated in some Bug Bounty programmes (crowd sourced security). This is an exciting experience, especially when I find exotic vulnerabilities. I am acknowledged by [Facebook(3x)](https://www.facebook.com/whitehat/thanks/), [Google](https://www.google.com/about/appsecurity/hall-of-fame/archive/), [Square](https://hackerone.com/square), [Yahoo](https://hackerone.com/yahoo). etc. for reporting security vulnerabilities.

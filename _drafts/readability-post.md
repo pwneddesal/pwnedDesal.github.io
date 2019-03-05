@@ -1,8 +1,12 @@
 ---
+title: Testing Readability with a Bunch of Text
+date: 2012-05-22 00:00:00 +02:00
+tags:
+- sample post
+- readability
+- test
 layout: post
-title: "Testing Readability with a Bunch of Text"
-excerpt: "A ton of text to test readability."
-tags: [sample post, readability, test]
+excerpt: A ton of text to test readability.
 author: leo
 comments: true
 ---

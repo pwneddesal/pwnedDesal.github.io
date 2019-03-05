@@ -1,8 +1,12 @@
 ---
-layout: post
 title: Abusing Thumbnails to see Vimeo private video
-excerpt: 'https://vimeo.com/upload/select_thumb uri is used set a thumbnails on your vimeo video. https://vimeo.com/upload/.............'
-categories: [IDOR,Privacy]
+date: 2016-05-11 00:00:00 +02:00
+categories:
+- IDOR
+- Privacy
+layout: post
+excerpt: https://vimeo.com/upload/select_thumb uri is used set a thumbnails on your
+  vimeo video. https://vimeo.com/upload/.............
 comments: true
 ---
 

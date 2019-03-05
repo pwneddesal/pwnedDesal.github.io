@@ -1,9 +1,13 @@
 ---
-layout: post
 title: Flowdock XSS or RCE(malicious file upload)
-excerpt: "One day I accidentally uploaded a `.pdf` filetype on https://www.flowdock.com/oauth/applications page. it was sucessfuly uploaded. So I tried to upload some arbitary filetype, But flowdock rejected it.
-Flowdock backlisted all arbirtary content-type such as....."
-categories: [XSS, Malicious file upload]
+date: 2014-07-26 00:00:00 +02:00
+categories:
+- XSS
+- Malicious file upload
+layout: post
+excerpt: One day I accidentally uploaded a `.pdf` filetype on https://www.flowdock.com/oauth/applications
+  page. it was sucessfuly uploaded. So I tried to upload some arbitary filetype, But
+  flowdock rejected it. Flowdock backlisted all arbirtary content-type such as.....
 comments: true
 ---
 
