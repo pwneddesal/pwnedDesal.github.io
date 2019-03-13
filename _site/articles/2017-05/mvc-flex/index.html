@@ -6,22 +6,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <title>Flowdock XSS or RCE(malicious file upload)</title>
-  <meta name="description" content="One day I accidentally uploaded a `.pdf` filetype on https://www.flowdock.com/oauth/applications page. it was sucessfuly uploaded. So I tried to upload some ...">
+  <title>PoC for robotlegs—a MVC Flex applications vulnerable to CVE-2011-2461</title>
+  <meta name="description" content="PoC for robotlegs—a MVC Flex applications vulnerable to CVE-2011-2461">
 
   <!-- CSS files -->
-  <link rel="stylesheet" href="/css/font-awesome.min.css">
-  <link rel="stylesheet" href="/css/main.css">
-  <link rel="stylesheet" href="/css/responsivediv.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link rel="stylesheet" href="http://192.168.33.177:4000//css/main.css">
+  <link rel="stylesheet" href="http://192.168.33.177:4000//css/responsivediv.css">
 
-  <link rel="canonical" href="/articles/2014-07/Flowdock-XSS-or-RCE">
-  <link rel="alternate" type="application/rss+xml" title="Blog BLog" href=" /feed.xml " />
+  <link rel="canonical" href="http://192.168.33.177:4000//articles/2017-05/mvc-flex">
+  <link rel="alternate" type="application/rss+xml" title="Blog BLog" href="http://192.168.33.177:4000/ /feed.xml " />
 
   <!-- Icons -->
   <!-- 16x16 -->
-  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="shortcut icon" href="http://192.168.33.177:4000//favicon.ico">
   <!-- 32x32 -->
-  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="shortcut icon" href="http://192.168.33.177:4000//favicon.ico">
 
 </head>
 
@@ -30,30 +30,30 @@
   <div class="row">
     <div class="col s12 m3">
       <div class="table cover">
-        
+         
 
 <div class="cover-card table-cell table-middle">
   
-  <img src="/img/profile.jpg" alt="this is me!" class="avatar">
+  <img src="http://192.168.33.177:4000//img/profile.jpg" alt="this is me!" class="avatar">
   
-  <a href="/" class="author_name">Adrian Belen</a>
+  <a href="http://192.168.33.177:4000//" class="author_name">Adrian Belen</a>
   <span class="author_job">WEB APPLICATION SECURITY ENTHUSIAST, BREAKING THINGS FOR FUN & profit :D</span>
   <span class="author_bio mbm"></span>
   <nav class="nav">
     <ul class="nav-list">
        
       <li class="nav-item">
-        <a href="/about me ">about me</a>
+        <a href="http://192.168.33.177:4000//about me ">about me</a>
         <span>/</span>
       </li>
       
       <li class="nav-item">
-        <a href="/archive">archive</a>
+        <a href="http://192.168.33.177:4000//archive">archive</a>
         <span>/</span>
       </li>
       
       <li class="nav-item">
-        <a href="/categories">categories</a>
+        <a href="http://192.168.33.177:4000//categories">categories</a>
       </li>
      
     </ul>
@@ -61,14 +61,14 @@
   <div class="social-links">
   <ul>
     
-    <li><a href="http://twitter.com/nukesec" class="social-link-item" target="_blank"><i class="fa fa-fw fa-twitter"></i></a></li>
+    <li><a href="http://twitter.com/nukesec" class="social-link-item" target="_blank"><i class="fab fa-twitter-square"></i></a></li>
     
     
     
     
     
     
-    <li><a href="http://github.com/deadstar1" class="social-link-item" target="_blank"><i class="fa fa-fw fa-github"></i></a></li>
+    <li><a href="http://github.com/deadstar1" class="social-link-item" target="_blank"><i class="fab fa-github"></i></a></li>
     
     
     
@@ -141,17 +141,17 @@
     <div class="col s12 m9">
       <div class="post-listing">
         <div class="back-home">
-  <a href="/">< back Home.</a>
+  <a href="http://192.168.33.177:4000//">< back Home.</a>
 </div>
 
 
 
 <div id="post">
   <header class="post-header">
-    <h1 title="Flowdock XSS or RCE(malicious file upload)">Flowdock XSS or RCE(malicious file upload)</h1>
+    <h1 title="PoC for robotlegs—a MVC Flex applications vulnerable to CVE-2011-2461">PoC for robotlegs—a MVC Flex applications vulnerable to CVE-2011-2461</h1>
     <span class="post-meta">
       <span class="post-date">
-        26 JUL 2014
+        23 MAY 2017
       </span>
       •
       <span class="read-time" title="Estimated read time">
@@ -166,22 +166,47 @@
   </header>
 
   <article class="post-content">
-    <p>One day I accidentally uploaded a .pdf filetype on https://www.flowdock.com/oauth/applications page. it was successfully uploaded. So I tried to upload some arbitrary filetype, But flowdock rejected it. Flowdock backlisted all arbitrary content-type such as text/HTML, application/x-asp, application/x-perl. … etc.. and flowdock also checked the signature of a file that used to identify if the file is a real image or not.</p>
+    <p>Last year when I participated in a bug bounty program, I have found a web application that hosted a vulnerable <code>.swf</code> on their CDN. My PoC abuses the CDN as the intermediate from the web app to attacker host.The PoC abuses robotlegs-framework-v1.5.2 a vulnerable ActionScript Application Framework which allows SoP bypass.</p>
 
-<p><strong>Error message when I tried to upload a shell!</strong></p>
+<p>It is not typical to exploit it (to read the HTTP Response of the vulnerable web app) because  the vulnerable <code>.SWF</code> file is hosted on the CDN. In addition, the attacker can only do SOP bypass on the CDN. However, a <code>crossdomain.xml </code> policy of the vulnerable app allowed cross domain communication between the vulnerable web app and its CDN.
+&gt; Adobe Flex SDK is prone to a cross-site scripting vulnerability because it fails to properly sanitize user-supplied input to express-install template files.</p>
 
-<p><img src="http://2.bp.blogspot.com/-P21qQh5Oytc/U9NgEyXweRI/AAAAAAAAAPg/EnoMY0H5CXw/s1600/1.png" alt="ohh" /></p>
+<blockquote>
+  <p>An attacker could exploit this vulnerability to execute arbitrary script code in the context of a web application built using the SDK. This may allow the attacker to steal cookie-based authentication credentials and launch other attacks.</p>
+</blockquote>
 
-<p><strong>If we want to upload our shell or HTML-XSS PoC, we need to upload a real image that contains our XSS/RCE payload. I changed the EXIF header of the image and upload the file.</strong></p>
+<blockquote>
+  <p>Adobe Flex SDK 4.5.1 and prior versions are affected. http://www.securityfocus.com/bid/50869/discuss</p>
+</blockquote>
 
-<p><img src="http://1.bp.blogspot.com/-gsbzUjnYGmY/U9NgGaYF46I/AAAAAAAAAPo/hB4MN-rQCBc/s1600/2.png" alt="ohh" /></p>
+<p><img src="/img/chart.png" alt="" /></p>
 
-<h3 id="result">RESULT:</h3>
+<p>The vulnerable SWF file has 3 GET parameter which are game, config, and type. <code>config</code> parameter is used to load config.xml which is located in CDN domain.</p>
 
-<p><img src="http://2.bp.blogspot.com/-mnaUU_-6PTU/U9NgG4o4c-I/AAAAAAAAAP0/oDSsBwRqDTM/s1600/3.png" alt="ohh" /></p>
+<p>config.xml looks like this.</p>
 
-<p><img src="http://1.bp.blogspot.com/-bpdH-nN4tYk/U9NgKLSwt1I/AAAAAAAAAP8/hGoi7rihJN0/s1600/4.png" alt="ohh" />
-## YEHH!</p>
+<pre><code>&lt;root&gt;
+&lt;module type="game" url="GameViewer.swf"/&gt;
+&lt;module type="puzzle" url="Puzzle.swf"/&gt;
+&lt;default&gt;
+&lt;type&gt;puzzle&lt;/type&gt;
+&lt;game&gt;assets/data.json&lt;/game&gt;
+&lt;/default&gt;
+&lt;/root&gt;
+</code></pre>
+
+<p>Based on config.xml file, vulnerable SWF file extends the module class of robotlegs MVC. Besides, main.swf loads gameviewer.swf and puzzle.swf modules.</p>
+
+<p>The malicious user could force main.swf to load or inject malicious remote module(malicious swf files hosted in the attacker’s server) to itself by changing the config parameter.The injected malicious remote module can send AJAX request and read HTTP response of victim website. In other words, the malicious user can read messages, steal CSRF token, and send ajax request (change password of the victim, or any other actions)— Same-Origin Policy Bypass.</p>
+
+<p><a href="https://threatpost.com/adobe-cve-2011-2461-remains-exploitable-four-years-after-patch/111754/">More information here</a></p>
+
+<p>true<script src="https://gist.github.com/6ec49529d2f5f7ac23634059147b9edb.js"> </script></p>
+
+<p><strong>References:</strong>
+- <a href="http://www.digitaldogbyte.com/2010/08/17/robotlegs-modular-utilities-tutorial/">http://www.digitaldogbyte.com/2010/08/17/robotlegs-modular-utilities-tutorial/</a>
+- <a href="http://www.adobe.com/devnet/actionscript/articles/intro-robotlegs-pt1.html">Get an overview of this framework for ActionScript 3 development through a simple</a>
+- <a href="http://joelhooks.com/2010/05/02/modular-robotlegs/">http://joelhooks.com/2010/05/02/modular-robotlegs/</a></p>
 
   </article>
 </div>
@@ -190,49 +215,34 @@
   <h6>Share on: </h6>
   <ul>
     <li>
-      <a href='https://twitter.com/intent/tweet?text=http://maradrianbelen.com/articles/2014-07/Flowdock-XSS-or-RCE @nukesec' class="twitter btn" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+      <a href='https://twitter.com/intent/tweet?text=http://maradrianbelen.com/articles/2017-05/mvc-flex @nukesec' class="twitter btn" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
     </li>
     <li>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=http://maradrianbelen.com/articles/2014-07/Flowdock-XSS-or-RCE @nukesec'" class="facebook btn" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://maradrianbelen.com/articles/2017-05/mvc-flex @nukesec'" class="facebook btn" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
     </li>
     <li>
-      <a href="https://plus.google.com/share?url=http://maradrianbelen.com/articles/2014-07/Flowdock-XSS-or-RCE" class="google-plus btn" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+      <a href="https://plus.google.com/share?url=http://maradrianbelen.com/articles/2017-05/mvc-flex" class="google-plus btn" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
     </li>
     <li>
-      <a href="https://news.ycombinator.com/submitlink?u=http://maradrianbelen.com/articles/2014-07/Flowdock-XSS-or-RCE" class="hacker-news btn" title="Share on Hacker News"><i class="fa fa-hacker-news"></i><span> Hacker News</span></a>
+      <a href="https://news.ycombinator.com/submitlink?u=http://maradrianbelen.com/articles/2017-05/mvc-flex" class="hacker-news btn" title="Share on Hacker News"><i class="fa fa-hacker-news"></i><span> Hacker News</span></a>
     </li>
     <li>
-      <a href="https://www.reddit.com/submit?url=http://maradrianbelen.com/articles/2014-07/Flowdock-XSS-or-RCE" class="reddit btn" title="Share on Reddit"><i class="fa fa-reddit"></i><span> Reddit</span></a>
+      <a href="https://www.reddit.com/submit?url=http://maradrianbelen.com/articles/2017-05/mvc-flex" class="reddit btn" title="Share on Reddit"><i class="fa fa-reddit"></i><span> Reddit</span></a>
     </li>
   </ul>
 </div><!-- end share-buttons -->
 
 
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES * * */
-    var disqus_shortname = 'adrianswebsecurityblog';
-
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-
-
 
         <footer>
-  &copy; 2016 Adrian Belen. Powered by <a href="http://jekyllrb.com/">Jekyll</a>,  made with <i class="fa fa-heart heart-icon"></i>
+  &copy; 2019 Adrian Belen. Powered by <a href="http://jekyllrb.com/">Jekyll</a>,  made with <i class="fa fa-heart heart-icon"></i>
 </footer>
 
       </div>
     </div>
   </div>
-  <script type="text/javascript" src="/js/jquery-2.1.4.min.js"></script>
-<script type="text/javascript" src="/js/main.js"></script>
+  <script type="text/javascript" src="http://192.168.33.177:4000//js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="http://192.168.33.177:4000//js/main.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/3.1.1/anchor.min.js"></script>
 
 <!-- Asynchronous Google Analytics snippet -->
@@ -259,7 +269,7 @@
     var motos = [
     //"In the end, people will judege you anyway, so don't live your life impressing others - live your life impressing yourself",
     //"Live life to express, not to impress",
-    "<b>Success</b> is the ability to go from one failure to another with no loss of enthusiasm. </br> -Sir Winston Churchill"
+    "<b>Success</b> is the ability to go from one failure to another with no loss of enthusiasm."
     //"<b>IF</b> no mistake have you made, yet losing you are... a different game you should play </br> - Master Yoda"
     //"<b>No free quote for the day!</b>",
     //"Your dream doesn't have an expiration date. Take a deep breath, and try again.",
@@ -267,7 +277,7 @@
     ];
     var len =motos.length
     var x = Math.floor((Math.random() * len ) + 1);
-    document.getElementsByClassName('author_bio')[0].innerHTML='"'+motos[x-1] + '"';
+    document.getElementsByClassName('author_bio')[0].innerHTML='"'+motos[x-1] + '" </br> -Sir Winston Churchill';
     console.log('selected moto:' + motos[x-1]);
     console.log('moto count: ' + motos.length );
     console.log('random ' + x-1)

