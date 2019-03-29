@@ -10,8 +10,8 @@ collections:
     output: true
 description: WEB APPLICATION SECURITY ENTHUSIAST, BREAKING THINGS FOR FUN & profit
   :D
-url: https://maradrianbelen.com
-blog_uri: http://maradrianbelen.com
+url: http://0x89.me
+blog_uri: http://0x89.me
 markdown: kramdown
 excerpt_separator: "<!--more-->"
 permalink: "/articles/:year-:month/:title"
