@@ -1,7 +1,14 @@
 /* LAYOUT CSS */
+.gradient-bg{
+    background-image: url(https://source.unsplash.com/dDDjYT1XZFE/500x600);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .cover {
   /*background-color: $background-color; old color*/ 
-  background-color: #525252;
+  /*background-color: #525252;*/
+  background-image: linear-gradient(rgba(10, 24, 36, 0.5), rgba(10, 24, 36, 1));
   position: fixed;
   text-align: center;
   width: 100%;
