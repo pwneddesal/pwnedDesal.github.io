@@ -10,8 +10,8 @@ collections:
     output: true
 description: WEB APPLICATION SECURITY ENTHUSIAST, BREAKING THINGS FOR FUN & profit
   :D
-url: https://0x89.me
-blog_uri: https://0x89.me
+url: https://pwneddesal.github.io
+blog_uri: https://pwneddesal.github.io
 markdown: kramdown
 excerpt_separator: "<!--more-->"
 permalink: "/articles/:year-:month/:title"
