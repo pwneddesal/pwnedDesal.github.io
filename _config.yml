@@ -10,8 +10,8 @@ collections:
     output: true
 description: WEB APPLICATION SECURITY ENTHUSIAST, BREAKING THINGS FOR FUN & profit
   :D
-url: https://pwneddesal.github.io
-blog_uri: https://pwneddesal.github.io
+url: http://127.0.0.1:4000
+blog_uri: http://127.0.0.1:4000
 markdown: kramdown
 excerpt_separator: "<!--more-->"
 permalink: "/articles/:year-:month/:title"
@@ -59,3 +59,5 @@ owner:
   codepen: 
   hackerone: adrianbelen
   bugcrowd: adrianbelen
+plugins:
+  - jekyll-gist
