@@ -9,6 +9,7 @@ excerpt: When you browse a link in docviewer.yandex.com, The site will recreate 
   token named `sk`, which is used to validate a redirection and anti-csrf token `sk`
   is also an anti-csrf token on  {% highlight text %} http://webmaster.yandex.ru`,.....
 comments: true
+thumbnail: japan.jpg
 ---
 
 When you browse a link in docviewer.yandex.com, The site will recreate a token named sk, which is used to validate a redirection and anti-csrf token. sk is also an anti-CSRF token on `http://webmaster.yandex.ru, https://docviewer.yandex.com/r.xml`. now If the attacker knows the value of your sk token, he can make a redirection and CSRF attack. How to know the token of the victim ???. Because `http://docviewer.yandex.com/r.xml?sk=thecsrftokenofvictim&url=evilsite` useD GET request, the params are showed in URL and it also changeable to https to HTTP. as a result, you can use REFERER HEADER to get the token.

@@ -8,6 +8,7 @@ layout: post
 excerpt: https://vimeo.com/upload/select_thumb uri is used set a thumbnails on your
   vimeo video. https://vimeo.com/upload/.............
 comments: true
+thumbnail: japan.jpg
 ---
 
 https://vimeo.com/upload/select_thumb URL is used to set thumbnails to your Vimeo video. https://vimeo.com/upload/select_thumb URL request is composed of 3 parameter clip_id, token, and time. clip_id parameter is used to select a video you want to get a thumbnail, the token is an anti-CSRF token and time parameter is the time frame of the video you selected.

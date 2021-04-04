@@ -9,6 +9,7 @@ excerpt: One day I accidentally uploaded a `.pdf` filetype on https://www.flowdo
   page. it was sucessfuly uploaded. So I tried to upload some arbitary filetype, But
   flowdock rejected it. Flowdock backlisted all arbirtary content-type such as.....
 comments: true
+thumbnail: japan.jpg
 ---
 
 One day I accidentally uploaded a .pdf filetype on https://www.flowdock.com/oauth/applications page. it was successfully uploaded. So I tried to upload some arbitrary filetype, But flowdock rejected it. Flowdock backlisted all arbitrary content-type such as text/HTML, application/x-asp, application/x-perl. … etc.. and flowdock also checked the signature of a file that used to identify if the file is a real image or not.

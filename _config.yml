@@ -59,5 +59,13 @@ owner:
   codepen: 
   hackerone: adrianbelen
   bugcrowd: adrianbelen
-plugins:
-  - jekyll-gist
+pagination:
+  enabled: true
+  per_page: 4 
+  paginate_path: "/page:num"
+  sort_reverse: true
+  title: ":title"
+  trail:
+    before: 2
+    after: 2
+plugins: [jekyll-gist,jekyll-paginate-v2,jekyll-timeago]

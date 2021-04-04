@@ -1,4 +1,57 @@
 /* default font-size according to the viewport width */
+/**
+ * VARIABLES
+ */
+:root {
+  --color-primary-header:#e32c5d;
+  --color-primary: #ef2744;
+  --color-bg: #fafcfe;
+  --color-bg-header:white;
+  --font-color:#555;
+  --font-color-headers:#333;
+  --box-shadow-first-color: rgba(0, 0, 0, 0.4);
+  --box-shadow-second-color:rgba(0, 0, 0, 0.1);
+  --color-bg-footer: rgba(43, 45, 66, 0.96);
+  --color-meta:#8f8f8f;
+  --color-box-shadow-button:rgba(0, 0, 0, 0.2);
+  --color-profile-info:#fff;
+  --color-quote-bg:#f8f9fa;
+   /* --color-secondary: #f9d170;
+  --color-bg: #f9f7f3;
+  --color-text: #252525;
+  --color-light: #f3f3f3;
+  --color-success: #067973;
+  --color-success-bg: #f5fffe;
+  --color-error: #b71540;
+  --color-error-bg: #fdeff3;
+  --color-shadow: rgba(23, 11, 41, 0.12); */
+  --font-base-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  --font-heading-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  --metric-rhythm: 2rem;
+  --metric-gutter: 2rem;
+  --metric-box-padding: 1rem 1rem;
+  --metric-interaction-padding: 0.6rem 0.6rem;
+  --color-callToaction-bg:white;
+}
+[data-theme="dark"] {
+  --color-primary-header:#e32c5d;
+  --color-primary: #aa2146;
+  --color-bg: #161625;
+  --color-bg-header:#161625;
+  --font-color:#bdbcbc;
+  --font-color-headers:#d6d4d4;
+  --box-shadow-first-color: rgba(0, 0, 0, 0.4);
+  --box-shadow-second-color:rgba(0, 0, 0, 0.1);
+  --color-bg-footer: rgba(43, 45, 66, 0.96);
+  --color-meta:#8f8f8f;
+  --color-box-shadow-button:rgba(255 255 255 / 20%);
+  --color-profile-info:#fff;
+  --color-quote-bg:#2c2c4c;
+  --color-callToaction-bg:#22223a;
+  
+}
 html {
   font-size: 16px;
   line-height: 1.5rem;
@@ -6,17 +59,25 @@ html {
 p {
   margin-bottom: 1.5rem;
 }
-
+strong,h4 {
+  font-weight: 500;
+}
+h3{
+  font-weight: 700;
+}
+button{
+  cursor: pointer;
+}
 /* @media screen and (min-width: 900px) {
   html {
     font-size: 18px;
   }
-}
-@media screen and (min-width: 1200px) {
+}*/
+@media screen and (min-width: 2000px) {
   html {
-    font-size: 20px;
+    font-size: 18px;
   }
-} */
+}
 /*
 #body
 #main
@@ -28,8 +89,8 @@ p {
 
 /*#body*/
 body {
-  background-color: #fafcfe;
-  color: #555;
+  background-color: var(--color-bg);
+  color: var(--font-color);
   line-height: 1.8;
   font-family: "Work Sans", system-ui, -apple-system, BlinkMacSystemFont,
     Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue,
@@ -40,7 +101,7 @@ body {
 /*#header*/
 header nav {
   display: flex;
-  background-color: white;
+  background-color: var(--color-bg-header);
   /* width: 100%; */
   padding: 30px;
   text-align: center;
@@ -63,7 +124,7 @@ header nav section {
 /*}*/
 header nav a {
   text-decoration: none;
-  color: #555;
+  color: var(--font-color);
   font-size: 1rem;
   margin: 0 1rem;
   /*flex-grow:1;*/
@@ -82,7 +143,7 @@ section#menu a {
   margin-left: auto;
   margin-right: auto;
   border-radius: 50%;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 0 0 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 3px var(--box-shadow-first-color), 0 0 0 6px var(--box-shadow-second-color);
 }
 #metadata-profile h2 {
   font-size: 3rem;
@@ -117,7 +178,7 @@ img#profile {
   /* max-width: 500px; */
   /* width: 350px; */
   max-width: 250px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 0 0 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 3px var(--box-shadow-first-color), 0 0 0 6px var(--box-shadow-second-color);
 }
 main section#about {
   margin-bottom: 10px;
@@ -175,7 +236,7 @@ main section#education section.education-item {
 /* #footer*/
 footer {
   min-height: 300px;
-  background-color: rgba(43, 45, 66, 0.96);
+  background-color: var(--color-bg-footer);
   margin-top: 100px;
   text-align: center;
   background-image: url("/images/bg-img.png");
@@ -191,7 +252,7 @@ footer {
 #socialsite span {
   font-weight: bold;
   margin-right: 10px;
-  color: #ef2744;
+  color: var(--color-primary-header);
   font-size: 1.25rem;
 }
 footer #copyright {
@@ -209,7 +270,7 @@ footer h2 {
 h1,
 h2,
 strong {
-  color: #333;
+  color: var(--font-color-headers);
 }
 h1 {
   font-family: "Caveat", cursive;
@@ -238,6 +299,7 @@ h1 {
   border-radius: 2px;
   max-height: 150px;
   height: 150px;
+  border-radius: 5%;
 }
 #blog-container {
   margin-bottom: 10px;
@@ -265,32 +327,32 @@ h1 {
   width: 3px;
   height: 3px;
   border-radius: 50%;
-  background: #8f8f8f;
+  background:var(--color-meta);
   margin-left: 0.5rem;
   margin-right: 0.5rem;
   position: relative;
   top: -3px;
 }
 .meta {
-  color: #8f8f8f;
+  color:var(--color-meta);
   font-size: 0.8125rem;
 }
 .meta span a {
-  color: #8f8f8f;
+  color:var(--color-meta);
 }
 .blogpost .blogpost-content {
 }
 .blogpost a {
   text-decoration: none;
-  color: #ef2744;
+  color: var(--color-primary);
 }
 .nextlink {
   max-width: 950px;
   text-align: center;
   border-radius: 3px;
-  background-color: #ef2744;
+  background-color: var(--color-primary);
   padding: 0.7rem;
-  margin-top: 5rem;
+  margin-top: 1rem;
 }
 .nextlink a {
   text-decoration: none;
@@ -311,9 +373,9 @@ h1 {
   font-size: 25px;
 }
 #calltoaction button {
-  background-color: #ef2744;
+  background-color: var(--color-primary-header);
   border: none;
-  color: white;
+  color: var(--color-bg-header);
   padding: 10px 18px;
   text-align: center;
   text-decoration: none;
@@ -344,7 +406,7 @@ h1 {
 p a,
 li a {
   text-decoration: none;
-  color: #ef2744;
+  color:var(--color-primary);
 }
 /*main post*/
 main article {
@@ -360,6 +422,7 @@ article header h1 {
   font-size: 1.9em;
   font-family: "Helvetica", "arial";
   margin-bottom: 0.1em;
+  margin-top: 1.5em;
 }
 article h2 {
   font-weight: bold;
@@ -372,9 +435,9 @@ article h2 {
   margin-top: 2em;
 }
 #next-pre button {
-  background-color: #ef2744;
+  background-color: var(--color-primary-header);
   border: none;
-  color: white;
+  color:var(--color-bg-header);
   padding: 17px 15px;
   text-align: center;
   text-decoration: none;
@@ -395,30 +458,11 @@ article h2 {
   font-display: swap;
   src: url("webfont/Inter-Black.woff2") format("woff2");
 }
-
-/**
- * VARIABLES
- */
-:root {
-  --color-primary: #4c2982;
-  --color-secondary: #f9d170;
-  --color-bg: #f9f7f3;
-  --color-text: #252525;
-  --color-light: #f3f3f3;
-  --color-success: #067973;
-  --color-success-bg: #f5fffe;
-  --color-error: #b71540;
-  --color-error-bg: #fdeff3;
-  --color-shadow: rgba(23, 11, 41, 0.12);
-  --font-base-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  --font-heading-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  --metric-rhythm: 2rem;
-  --metric-gutter: 2rem;
-  --metric-box-padding: 1rem 1rem;
-  --metric-interaction-padding: 0.6rem 0.6rem;
+::placeholder{
+  color:var(--font-color);
 }
+
+
 section#calltoaction h2 {
   font-family: var(--font-heading-family, sans-serif);
   font-size: 1.2rem;
@@ -440,7 +484,9 @@ button {
   padding: 0.8rem;
   padding: var(--metric-interaction-padding);
   outline-offset: -1px;
-  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 5px 0 var(--color-box-shadow-button);
+  background-color: var(--color-callToaction-bg);
+  color:var(--font-color);
 }
 button {
 }
@@ -529,20 +575,20 @@ input:checked + .slider:before {
 nav #image .logo svg {
   width: 2.3rem;
   height: 2.3rem;
-  stroke: white;
+  stroke: var(--color-bg-header);
 }
 
 #profile-info {
   position: relative;
   padding: 3.5em 1em 1.9em;
   margin-bottom: 3em;
-  color: #fff !important;
-  background: #e32c5d;
+  color: var(--color-profile-info) !important;
+  background: var(--color-primary-header);
   min-height: 20rem;
 }
 #metadata-profile h2,
 #metadata-profile small {
-  color: #fff !important;
+  color: var(--color-profile-info) !important;
 }
 #metadata-profile small {
   font-size: 1.2rem;
@@ -646,9 +692,10 @@ blockquote {
   position: relative;
   padding-left: 20px;
   font-style: italic;
-  border-left: 5px solid #ef2744;
+  border-left: 5px solid var(--color-primary);
+  background-color: var(--color-quote-bg);
 }
-code {
+/* code {
   color: #1277a3;
   padding: 3px 5px;
   margin: 0 2px;
@@ -673,8 +720,44 @@ pre code {
   font-size: 0.9em;
   background-color: #f8f8f8;
   font-size: 13px;
-}
+} */
 img {
   height: auto;
   max-width: 100%;
 }
+/* syntax highligting */
+/* Dracula Theme v1.2.5
+ *
+ * https://github.com/zenorocha/dracula-theme
+ *
+ * Copyright 2016, All rights reserved
+ *
+ * Code licensed under the MIT license
+ * http://zenorocha.mit-license.org
+ *
+ * @author Rob G <wowmotty@gmail.com>
+ * @author Chris Bracco <chris@cbracco.me>
+ * @author Zeno Rocha <hi@zenorocha.com>
+ * @author Piruin Panichphol <piruin.p@gmail.com>
+ */
+
+/*
+ * Variables
+ */
+:root {
+  --dt-gray-dark: #282a36; /*// Background*/
+  --dt-gray: #44475a; /* // Current Line & Selection */
+  --dt-gray-light: #f8f8f2; /*  // Foreground */
+  --dt-blue: #6272a4; /* // Comment */
+  --dt-cyan: #8be9fd;
+  --dt-green: #50fa7b;
+  --dt-orange: #ffb86c;
+  --dt-pink: #ff79c6;
+  --dt-purple: #bd93f9;
+  --dt-red: #ff5555;
+  --dt-yellow: #f1fa8c;
+}
+
+/*
+  * Styles
+  */

@@ -1,21 +1,23 @@
 ---
 # Feel free to add content and custom Front Matter to this file.
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
 layout: default
 title: pwnedDesal
+pagination:
+    enabled: true
+    per_page: 4
 ---
 <!--    https://www.free-css.com/assets/files/free-css-templates/preview/page255/devblog-v1.1/-->
 <section id="profile-info">
-    <img src="{{site.url}}/images/profile.png" width="120" height="120">
+    <img src="{{url}}/images/profile.png" width="170" height="170">
     <section id="metadata-profile">
-        <h2>Ututen blog</h2>
-        <small class="meta">ARBITRARY WEB AND MOBILE WRITING BY TOMOMI IMURA </small>
+        <h2>!#pwnedDesal</h2>
+        <small class="meta">ARBITRARY SECURITY & CODE STUFFFFFF BY BRRRRRRRRRRT</small>
     </section>
 </section>
 <section id="blog-container">
     <section id="calltoaction">
-        <h2>DevBlog - A Blog Template Made For Developers</h2>
+        <h2>DevBlog - A Blog Template Made For Developers.</h2>
         <div class="meta">Welcome to my blog. Subscribe and get my latest blog post in your inbox.</div>
         <form>
             <!--                <label for="email">Email address</label>-->
@@ -32,47 +34,33 @@ title: pwnedDesal
         </form>
 
     </section>
+    {% for post in paginator.posts %}
     <div class="blogpost">
-        <img src="{{site.url}}/images/maxresdefault.jpg" class="blogpost-img">
+        <img src="{{url}}/img/{{post.thumbnail}}" class="blogpost-img">
         <section class="blogpost-content">
-            <h2>A Guide to Becoming a Full-Stack Developer</h2>
+            <h2>{{ post.title }}</h2>
             <div class="meta">
-                <span class="meta-date">Published 2 days ago</span>
-                <span class="meta-time">5 min read</span>
-                <span class="meta-comment">
-                    <a href="https://www.free-css.com/free-css-templates">8 comments</a>
-                </span>
+                    <span class="meta-date">Published more than {{ post.date | timeago }} | {{ post.date | date_to_string }}</span>
+                    <span class="meta-time">5 min read</span>
+                    <span class="meta-comment">
+                        <a href="https://www.free-css.com/free-css-templates">8 comments</a>
+                    </span>
+
             </div>
-            <p class=secondary-info>Pellentesque imperdiet urna dui, vel commodo magna vehicula ut. Nulla et suscipit
-                est,
-                eget condimentum leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in magna
-                tempor,
-                hendrerit quam ac, faucibus purus. Fusce lorem lacus, maximus in pretium nec, ullamcorper nec dui.
-                Pellentesque condimentum vitae sapien sit amet vulputate. Fusce accumsan cursus lectus et porttitor.
-                <a href="#">Read more</a>
+            <p class=secondary-info>
+                {{ post.excerpt }}
+                <a href="{{ post.url }}">Read more</a>
             </p>
         </section>
     </div>
-    {% for post in site.posts %}
-            <div class="blogpost">
-                <img src="{{site.url}}/images/maxresdefault.jpg" class="blogpost-img">
-                <section class="blogpost-content">
-                    <h2>{{ post.title }}</h2>
-                    <div class="meta">
-                        <span class="meta-date">Published 2 days ago</span>
-                        <span class="meta-time">5 min read</span>
-                        <span class="meta-comment">
-                            <a href="https://www.free-css.com/free-css-templates">8 comments</a>
-                        </span>
-                    </div>
-                    <p class=secondary-info>
-                        {{ post.excerpt }}
-                        <a href="{{ post.url }}">Read more</a>
-                    </p>
-                </section>
-            </div>
     {% endfor %}
-    <div class="nextlink">
-        <a href="">Next</a>
-    </div>
+    <!-- Pagination links -->
+    <section id="next-pre">
+        {% if paginator.previous_page %}
+            <button id="next" data-url="{{ paginator.previous_page_path }}">Prev</button>
+        {% endif %}
+        {% if paginator.next_page %}
+            <button id="prev" data-url="{{ paginator.next_page_path }}">Next</button>
+        {% endif %}
+    </section>
 </section>

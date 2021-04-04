@@ -10,6 +10,7 @@ categories:
 layout: post
 excerpt: Stored on-site request forgery
 comments: false
+thumbnail: japan.jpg
 ---
 
 > 13/06/2017: This attack was coined as [Bypassing XSS Mitigations Via Script Gadgets](https://www.youtube.com/watch?v=p07acPBi-qw)
@@ -31,16 +32,18 @@ Just like CSRF attack, The attack can force the user to perform state-changing r
 
 **"data-url" and "data-remote": Send AJAX request to the given url after change event on element**
 
-```
+{% highlight html %}
 <input type="checkbox" name="task" id="task" value="1" data-url="/tasks/1" data-remote="true" data-method="post">
-
-```
+{% endhighlight %}
 
 **"data-params": Add additional parameters to the request**
 
-```
-<a data-remote="true" data-method="post" data-params="param1=Hello+server" href="/test">AJAX action with POST request</a>
-```
+{% highlight html %}
+<a data-remote="true"
+  data-method="post"
+  data-params="param1=Hello+server"
+  href="/test">AJAX action with POST request</a>
+{% endhighlight %}
 
 I used `<a>` tag since XSS filters refuses `<input>`,`<form>` HTML tag, My final payload would be this
 

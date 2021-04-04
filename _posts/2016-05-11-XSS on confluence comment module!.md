@@ -7,6 +7,7 @@ categories:
 layout: post
 excerpt: On `02/Jul/2015 3:27 AM` i found a XSS flaw on confluence, https://jira.atlassian.com/browse/CONF-38127
 comments: true
+thumbnail: japan.jpg
 ---
 
 On `02/Jul/2015 3:27 AM` I found a XSS flaw on confluence, https://jira.atlassian.com/browse/CONF-38127

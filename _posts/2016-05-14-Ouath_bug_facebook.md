@@ -8,6 +8,7 @@ categories:
 layout: post
 excerpt: facebook oauth flaws
 comments: true
+thumbnail: japan.jpg
 ---
 
 > OAuth is an open standard for authorization, commonly used as a way for Internet users to log in to third party websites using their Microsoft, Google, Facebook, Twitter, One Network etc. accounts without exposing their password.

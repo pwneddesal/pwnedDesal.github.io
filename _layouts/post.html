@@ -2,22 +2,25 @@
 layout: default
 ---
 <article>
-<header>
-    <h1>{{page.title}}</h1>
-    <div class="meta">
-        <span class="meta-date">Published 2 days ago</span>
-        <span class="meta-time">5 min read</span>
-        <span class="meta-comment">
-            <a href="https://www.free-css.com/free-css-templates">8 comments</a>
-        </span>
-    </div>
-</header>
-<p>{{ page.date | date_to_string }} - {{ page.author }}</p>
-<section>
-    {{ content }}
-</section>
-<section id="next-pre">
-    <button>Prev</button>
-    <button>Next</button>
-</section>
+    <header>
+        <h1>{{page.title}}</h1>
+        <div class="meta">
+            <span class="meta-date">Published 2 days ago</span>
+            <span class="meta-time">5 min read</span>
+            <span class="meta-comment">
+                <a href="https://www.free-css.com/free-css-templates">8 comments</a>
+            </span>
+        </div>
+    </header>
+    <section>
+        {{ content }}
+    </section>
+    <section id="next-pre">
+        {% if page.next.url %}
+        <button id="next" data-url=" {{page.next.url}}" title="{{page.next.title}}&nbsp;&raquo;">Prev</button>
+        {% endif %}
+        {% if page.previous.url %}
+        <button id="prev" data-url="{{page.previous.url}}" title="&laquo;&nbsp;{{page.previous.title}}">Next</button>
+        {% endif %}
+    </section>
 </article>
