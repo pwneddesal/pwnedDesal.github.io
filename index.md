@@ -40,7 +40,7 @@ pagination:
         <section class="blogpost-content">
             <h2>{{ post.title }}</h2>
             <div class="meta">
-                    <span class="meta-date">Published more than {{ post.date | timeago }} | {{ post.date | date_to_string }}</span>
+                    <span class="meta-date">Published more than | {{ post.date | date_to_string }}</span>
                     <span class="meta-time">5 min read</span>
                     <span class="meta-comment">
                         <a href="https://www.free-css.com/free-css-templates">8 comments</a>
