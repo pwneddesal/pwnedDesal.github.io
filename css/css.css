@@ -757,6 +757,19 @@ img {
   --dt-red: #ff5555;
   --dt-yellow: #f1fa8c;
 }
+.page{
+  text-align: center;
+}
+.page h1{
+   margin-bottom: 0px !important;
+   font-size:10rem;
+   padding:0;
+  font-family: cursive !important;
+  color:var(--color-primary);
+}
+.page p{
+  margin-bottom: auto;
+}
 
 /*
   * Styles
