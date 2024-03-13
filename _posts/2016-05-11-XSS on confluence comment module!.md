@@ -1,5 +1,5 @@
 ---
-title: XSS on confluence comment module
+title: XSS on Jira's Confluence Data Center
 date: 2016-05-11 00:00:00 +02:00
 categories:
 - XSS
