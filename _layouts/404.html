@@ -1,14 +1,46 @@
+---
+layout: compress
+---
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ page.lang | default: site.lang | default: " en " }}">
 
-{% include head.html %}
+{% include header.html %}
+<body data-theme="{{ site.mode }}" class="notransition">
 
-<body>
-{% include pageheader.html %}
-    <main>
-    {{content}}
-    </main>
-    <script src={{url}}/js/main.js></script>
+  <script>
+    const body = document.body;
+    const data = body.getAttribute("data-theme");
+
+    const initTheme = (state) => {
+      if (state === "dark") {
+        body.setAttribute("data-theme", "dark");
+      } else if (state === "light") {
+        body.removeAttribute("data-theme");
+      } else {
+        localStorage.setItem("theme", data);
+      }
+    };
+ 
+    initTheme(localStorage.getItem("theme"));
+    
+    setTimeout(() => body.classList.remove("notransition"), 75);
+  </script>
+
+  {% include navbar.html %}
+  <div class="wrapper">
+    <main aria-label="Content">
+      <div class="not-found">
+        <div class="container">
+          <div class="title">404</div>
+          <p class="phrase">😕 Hmm... Seems you lost from my journey.</p>
+          <a class="solution" href="{{ site.url }}">back home</a>
+        </div>
+      </div>
+    </main>  
+    {% include footer.html %}
+  </div>
+    
 </body>
 
 </html>
