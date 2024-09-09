@@ -1,18 +1,18 @@
 # Site settings
 title: Adrian Belen # site title
-description: >- # site description
+description:  # site description
   Specialized in web application penetration testing. Explore techniques for identifying and exploiting vulnerabilities in web-based systems.
 lang: en-US # default lang
 timezone: Asia/Jakarta # set your timezone
-image: assets/img/ogp.png # This image used for Open Graph more info https://ogp.me/
+image: img/cat.jpg # This image used for Open Graph more info https://ogp.me/
 repo: https://github.com/piharpi/jekyll-klise # site repo [optional]
 mode: dark # default theme "dark" | "light"
 
 # Profile settings
 author:
 name: Adrian Belen # author name
-bio: >- # tell to the world
-Penetration Tester/Bug Bounty Hunter.
+bio: # tell to the world
+  Penetration Tester/Bug Bounty Hunter.
 username: username # general username
 github: pwnedDesal # github username
 twitter: twitter_username # twitter username
