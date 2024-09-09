@@ -1,7 +1,6 @@
 # Site settings
 title: Adrian Belen # site title
-description:  # site description
-  Specialized in web application penetration testing. Explore techniques for identifying and exploiting vulnerabilities in web-based systems.
+description: Specialized in web application penetration testing. Explore techniques for identifying and exploiting vulnerabilities in web-based systems.
 lang: en-US # default lang
 timezone: Asia/Jakarta # set your timezone
 image: img/cat.jpg # This image used for Open Graph more info https://ogp.me/
