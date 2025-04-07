@@ -1,3 +1,15 @@
+---
+title: Dynamic Analysis on iOS (Pre-iOS 17) Using Windows – A Practical Guide
+tags: [ios, mobile]
+date: '2025-04-07'
+published: true
+layout: post
+excerpt: trest
+comments: false
+thumbnail: japan.jpg
+---
+
+
 # **Dynamic Analysis on iOS (Pre-iOS 17) Using Windows – A Practical Guide**  
 
 Penetration testing iOS applications without macOS can be tricky, especially if your device is **running iOS 16 or lower**. Apple imposes strict security measures, restricting system access and sandboxing applications, but **dynamic analysis is still possible on Windows** using sideloading techniques and runtime manipulation tools.  
