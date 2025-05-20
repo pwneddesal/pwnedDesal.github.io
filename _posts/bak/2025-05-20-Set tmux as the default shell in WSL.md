@@ -1,7 +1,7 @@
 ---
 title: Set tmux as the default shell in WSL
 tags: [linux,tmux]
-date: '2025-04-07'
+date: '2025-05-20'
 published: true
 layout: post
 excerpt: trest
