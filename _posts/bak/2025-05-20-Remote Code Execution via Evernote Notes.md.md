@@ -1,5 +1,5 @@
 ---
-title: Remote Code Execution via Evernote Notes
+title: Remote Code Execution via Evernote Windows App
 tags: [linux,tmux]
 date: '2025-05-20'
 published: true
