@@ -52,9 +52,7 @@ to get valuable information about the mendix app such as constants, data type, a
 ![](/img/Pastedimage20251028163641.png])
 
 ## widget
-
-- You can list all widgets on the https://app/widgets/.*
-  ![](/img/Pastedimage20251028162615.png])
-
-  Sometimes these widgets contains js library that is vulnerable to CVEs
-   ![](/img/Pastedimage20251028162826.png])
+You can list all widgets on the https://app/widgets/.* sometimes these widgets contains js library that is vulnerable to CVEs
+  ![](/img/Pastedimage20251028162615.png)
+  
+  ![](/img/Pastedimage20251028162826.png)
