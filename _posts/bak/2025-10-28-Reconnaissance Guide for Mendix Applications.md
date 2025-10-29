@@ -26,7 +26,7 @@ These files serve as templates for various forms within Mendix applications, inc
 ![](/img/Pastedimage20251028165800.png)
 ![](/img/Pastedimage20251028165747.png)
 	
- ## mx javscript library
+## mx javscript library
 ```
 // View session metadata. Entity
 mx.session.sessionData.metadata 
@@ -92,7 +92,7 @@ objwithContent.forEach(function(element) {
 **In certain cases, guest or anonymous users may gain access to the `System.user` entity, which holds sensitive credentials such as usernames and passwords.**
 
 
- ## get_session action
+## get_session action
  
   you can also send an HTTP post request with `get_session_data` action
 to get valuable information about the mendix app such as constants, data type, and fields. Fields and Data type are useful for other vulnerability such SQL injection   
