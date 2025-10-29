@@ -37,6 +37,52 @@ mx.session.sessionData.metadata[2]['objectType']
 //Enumeation
 mx.session.sessionData.enumerations
 ```
+** List all accessible Entities 
+```javascript
+//list only object that has content
+const objects = mx.session.sessionData.metadata
+let obj=null
+let objwithContent=[]
+function getObject(obj) {
+    //console.log(`Getting the content of the first object of ${obj}`);
+    var innerobj=obj
+    mx.data.get({
+        xpath: `//${obj}`,
+        callback: function(obj) {
+            // Check here if obj is not empty
+            if (obj.length != 0) {
+                let attr = obj[0]['jsonData']['attributes'];
+                console.log(`%cSample data of ${innerobj}:`, 'background-color: green')
+                for (const key in attr) {
+                    if (attr.hasOwnProperty(key)) {
+                        console.log(` ${key}: ${attr[key]['value']}`);
+                    }
+                }
+                objwithContent.push(obj)
+            } else {
+                console.log(`object ${obj} is empty`);
+            }
+        }
+    }); 
+}
+
+//loop to every  object
+for (const key in objects){ 
+	console.log(objects[key]['objectType'])
+	obj =objects[key]['objectType']
+	//console.log(obj)
+	getObject(obj)
+	}
+
+//list all accessible entities
+objwithContent.forEach(function(element) {
+  console.log(element[0].jsonData.objectType);
+//console.log(element[0].jsonData);
+});
+
+
+```
+
 
 
 ![](/img/Pastedimage20251028172328.png)
