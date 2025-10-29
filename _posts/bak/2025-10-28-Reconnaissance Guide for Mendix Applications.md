@@ -37,7 +37,8 @@ mx.session.sessionData.metadata[2]['objectType']
 //Enumeation
 mx.session.sessionData.enumerations
 ```
-** List all accessible Entities 
+**List all accessible Entities**
+
 ```javascript
 //list only object that has content
 const objects = mx.session.sessionData.metadata
