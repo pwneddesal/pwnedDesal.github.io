@@ -1,9 +1,7 @@
 ---
 title: Reconnaissance Guide for Mendix Applications 
 date: 2025-10-28 00:00:00 +02:00
-categories:
-- Info Leakage
-- recon
+tags: [Info Leakage, recon]
 layout: post
 excerpt: Mendix is a low-code application development platform that enables rapid application development. However, like any web application framework, it comes with its own set of security considerations. This guide explores various penetration testing techniques specific to Mendix applications, focusing on client-side exploitation and metadata enumeration.
 comments: true
