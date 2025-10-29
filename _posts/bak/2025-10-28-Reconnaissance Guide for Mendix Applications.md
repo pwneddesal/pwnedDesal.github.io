@@ -46,6 +46,7 @@ mx.session.sessionData.enumerations
 
 
  ## get_session action
+ 
   you can also send an HTTP post request with `get_session_data` action
 to get valuable information about the mendix app such as constants, data type, and fields. Fields and Data type are useful for other vulnerability such SQL injection   
 ![](/img/Pastedimage20251028163226.png)
@@ -58,7 +59,9 @@ to get valuable information about the mendix app such as constants, data type, a
 ![](/img/Pastedimage20251028163641.png)
 
 ## widget
-You can list all widgets on the https://app/widgets/.* sometimes these widgets contains js library that is vulnerable to CVEs
+
+You can list all widgets on the https://app/widgets/.* Sometimes these widgets contain a JS library that is vulnerable to CVEs
+
   ![](/img/Pastedimage20251028162615.png)
   
   ![](/img/Pastedimage20251028162826.png)
